@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class generateCsv {
     public void creacionCSV() {
-        String csvFile = "random_numbers.csv";
+        String csvFile = "numbers.csv";
         try {
             FileWriter writer = new FileWriter(csvFile);
             Random random = new Random();
