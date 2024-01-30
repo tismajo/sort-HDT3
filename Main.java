@@ -5,5 +5,8 @@ public class Main {
         uvg.cargaCSV("numbers.csv");   
         
         Bubblesort.ordenar(uvg.lista);
+        MergeSort.ordenar(uvg.lista);
+        GnomeSort.ordenar(uvg.lista);
+        QuickSort.ordenar(uvg.lista);
     }
 }
