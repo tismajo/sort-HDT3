@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class cargarCSV {
-    private ArrayList<datos> lista;
+    ArrayList<datos> lista;
 
     
     public cargarCSV() {

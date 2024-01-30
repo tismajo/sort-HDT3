@@ -1,5 +1,5 @@
-public class datos {
-    private int numero ;
+public class datos implements Comparable<datos> {
+    private int numero;
 
     public int getNumero() {
         return numero;
@@ -11,5 +11,10 @@ public class datos {
 
     public datos(int numero) {
         this.numero = numero;
-    } 
+    }
+
+    @Override
+    public int compareTo(datos otro) {
+        return Integer.compare(this.numero, otro.numero);
+    }
 }
