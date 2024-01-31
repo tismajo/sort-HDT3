@@ -54,16 +54,8 @@ public class RadixSort {
         }
         return divisor;
     }
-
-    private static <T extends Comparable<T>> int obtenerIndice(T elemento, int exp) {
-        int divisor = obtenerDivisor(exp, elemento);
-        Comparable<?> comparableElemento = (Comparable<?>) elemento;
-        return ((Integer) comparableElemento).intValue() / divisor % 10;
-    }
-    
-    
-    
-    
-    
-    
+        private static <T extends Comparable<T>> int obtenerIndice(T elemento, int exp) {
+            int divisor = obtenerDivisor(exp, elemento);
+            return ((datos) elemento).getNumero() / divisor % 10;
+        }       
 }
