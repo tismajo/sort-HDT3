@@ -1,18 +1,30 @@
-import java.util.List;
+import java.util.*;
 
 public class QuickSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
         System.out.println("QUICK");
-        quickSort(lista, 0, lista.size() - 1);
+        quickSort(lista);
     }
 
-    private static <T extends Comparable<T>> void quickSort(List<T> lista, int inicio, int fin) {
-        if (inicio < fin) {
-            int indiceParticion = particion(lista, inicio, fin);
+    private static <T extends Comparable<T>> void quickSort(List<T> lista) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(0);
+        stack.push(lista.size() - 1);
 
-            quickSort(lista, inicio, indiceParticion - 1);
-            quickSort(lista, indiceParticion + 1, fin);
+        while (!stack.isEmpty()) {
+            int fin = stack.pop();
+            int inicio = stack.pop();
+
+            if (inicio < fin) {
+                int indiceParticion = particion(lista, inicio, fin);
+
+                stack.push(inicio);
+                stack.push(indiceParticion - 1);
+
+                stack.push(indiceParticion + 1);
+                stack.push(fin);
+            }
         }
     }
 
@@ -37,4 +49,3 @@ public class QuickSort {
         return i + 1;
     }
 }
-
