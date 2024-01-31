@@ -13,13 +13,21 @@
 public class Main {
     public static void main(String[] args) throws Exception{
         cargarCSV uvg = new cargarCSV();
-
         uvg.cargaCSV("numbers.csv");   
-        
-        Bubblesort.ordenar(uvg.lista);
-        MergeSort.ordenar(uvg.lista);
-        GnomeSort.ordenar(uvg.lista);
-        QuickSort.ordenar(uvg.lista);
-        RadixSort.ordenar(uvg.lista);
+        Bubblesort.ordenar(uvg.lista); //Desordenada
+        Bubblesort.ordenar(uvg.lista); //Ordenada
+        //Vuelvo a implementar para tenerla desordenada
+        uvg.cargaCSV("numbers.csv");  
+        MergeSort.ordenar(uvg.lista); //Desordenada
+        MergeSort.ordenar(uvg.lista); //Ordenada
+        uvg.cargaCSV("numbers.csv"); 
+        GnomeSort.ordenar(uvg.lista); //Desordenada
+        GnomeSort.ordenar(uvg.lista); //Ordenada
+        uvg.cargaCSV("numbers.csv"); 
+        QuickSort.ordenar(uvg.lista); //Desordenada
+        QuickSort.ordenar(uvg.lista); //Ordenada
+        uvg.cargaCSV("numbers.csv"); 
+        RadixSort.ordenar(uvg.lista); //Desordenada
+        RadixSort.ordenar(uvg.lista); //Ordenada
     }
 }

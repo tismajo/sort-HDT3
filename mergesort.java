@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class MergeSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
+        System.out.println("MERGE");
         mergeSort(lista, 0, lista.size() - 1);
     }
 
