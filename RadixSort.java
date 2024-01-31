@@ -5,7 +5,8 @@ import java.util.List;
 public class RadixSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
-        if (lista == null || lista.size() == 0) {
+        System.out.println("RADIX");
+        if (lista == null || lista.isEmpty()) {
             return;
         }
 

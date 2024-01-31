@@ -5,7 +5,7 @@ public class Bubblesort {
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
         int n = lista.size();
         boolean intercambio;
-
+        System.out.println("BUBBLE");
         do {
             intercambio = false;
             for (int i = 1; i < n; i++) {

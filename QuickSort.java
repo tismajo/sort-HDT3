@@ -3,6 +3,7 @@ import java.util.List;
 public class QuickSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
+        System.out.println("QUICK");
         quickSort(lista, 0, lista.size() - 1);
     }
 

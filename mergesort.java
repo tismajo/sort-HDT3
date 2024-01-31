@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 public class MergeSort {
 
@@ -21,8 +22,8 @@ public class MergeSort {
         int n1 = medio - inicio + 1;
         int n2 = fin - medio;
 
-        List<T> listaIzquierda = lista.subList(inicio, medio + 1);
-        List<T> listaDerecha = lista.subList(medio + 1, fin + 1);
+        List<T> listaIzquierda = new ArrayList<>(lista.subList(inicio, medio + 1));
+        List<T> listaDerecha = new ArrayList<>(lista.subList(medio + 1, fin + 1));
 
         int i = 0, j = 0;
 
@@ -39,6 +40,7 @@ public class MergeSort {
             k++;
         }
 
+     
         while (i < n1) {
             lista.set(k, listaIzquierda.get(i));
             i++;
@@ -52,3 +54,4 @@ public class MergeSort {
         }
     }
 }
+
