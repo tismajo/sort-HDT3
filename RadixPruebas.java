@@ -9,8 +9,7 @@ public class RadixPruebas {
     @Test
     public void testRadixSort() {
         List<Integer> originalList = Arrays.asList(170, 45, 75, 90, 802, 24, 2, 66);
-        List<Integer> sortedList = new ArrayList<>(originalList);
-        sortedList.sort(Integer::compareTo);
+        List<Integer> sortedList = Arrays.asList(2, 24, 45, 66, 75, 90, 170, 802);
 
         RadixSort.ordenar(originalList);
 
@@ -34,7 +33,5 @@ public class RadixPruebas {
 
         assertEquals(sortedList, sortedList);
     }
-
-    // Agrega más pruebas según sea necesario
 
 }

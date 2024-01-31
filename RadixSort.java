@@ -24,25 +24,30 @@ public class RadixSort {
     private static <T extends Comparable<T>> void contarSort(List<T> lista, int exp) {
         int n = lista.size();
         List<T> resultado = new ArrayList<>(n);
-
-        LinkedList<T>[] cuenta = new LinkedList[10];
+    
+        List<LinkedList<T>> cuenta = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
-            cuenta[i] = new LinkedList<>();
+            cuenta.add(new LinkedList<>());
         }
-
+    
         for (T elemento : lista) {
             int indice = obtenerIndice(elemento, exp);
-            cuenta[indice].add(elemento);
+            cuenta.get(indice).add(elemento);
         }
-
+    
         for (int i = 0; i < 10; i++) {
-            resultado.addAll(cuenta[i]);
+            List<T> bucket = cuenta.get(i);
+            // Sort elements within the bucket
+            bucket.sort(Comparable::compareTo);
+            resultado.addAll(bucket);
         }
-
+    
         for (int i = 0; i < n; i++) {
             lista.set(i, resultado.get(i));
         }
     }
+    
+    
 
     private static <T extends Comparable<T>> int obtenerDivisor(int exp, T max) {
         int divisor = 1;
