@@ -5,6 +5,7 @@ import java.util.List;
 public class RadixSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
+        System.out.println("RADIX");
         if (lista == null || lista.size() == 0) {
             return;
         }
@@ -37,7 +38,6 @@ public class RadixSort {
     
         for (int i = 0; i < 10; i++) {
             List<T> bucket = cuenta.get(i);
-            // Sort elements within the bucket
             bucket.sort(Comparable::compareTo);
             resultado.addAll(bucket);
         }
@@ -47,8 +47,6 @@ public class RadixSort {
         }
     }
     
-    
-
     private static <T extends Comparable<T>> int obtenerDivisor(int exp, T max) {
         int divisor = 1;
         for (int i = 1; i < exp; i++) {
@@ -59,7 +57,11 @@ public class RadixSort {
 
     private static <T extends Comparable<T>> int obtenerIndice(T elemento, int exp) {
         int divisor = obtenerDivisor(exp, elemento);
-        return ((Number) elemento).intValue() / divisor % 10;
+        return ((datos) elemento).getNumero() / divisor % 10;
     }
+    
+    
+    
+    
     
 }
