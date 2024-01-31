@@ -5,8 +5,7 @@ import java.util.List;
 public class RadixSort {
 
     public static <T extends Comparable<T>> void ordenar(List<T> lista) {
-        System.out.println("RADIX");
-        if (lista == null || lista.isEmpty()) {
+        if (lista == null || lista.size() == 0) {
             return;
         }
 
@@ -30,6 +29,7 @@ public class RadixSort {
         for (int i = 0; i < 10; i++) {
             cuenta[i] = new LinkedList<>();
         }
+
         for (T elemento : lista) {
             int indice = obtenerIndice(elemento, exp);
             cuenta[indice].add(elemento);
@@ -54,6 +54,7 @@ public class RadixSort {
 
     private static <T extends Comparable<T>> int obtenerIndice(T elemento, int exp) {
         int divisor = obtenerDivisor(exp, elemento);
-        return (elemento.hashCode() / divisor) % 10;
+        return ((Number) elemento).intValue() / divisor % 10;
     }
+    
 }
